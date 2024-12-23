@@ -22,6 +22,7 @@ dnf install -y tmux
 # Disable COPRs so they don't end up enabled on the final image:
 # dnf5 -y copr disable ublue-os/staging
 rpm-ostree install screen
+rpm-ostree install kitty zsh
 
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
