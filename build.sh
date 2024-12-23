@@ -2,6 +2,9 @@
 
 set -ouex pipefail
 
+RELEASE="$(rpm -E %fedora)"
+
+
 ### Install packages
 
 # Packages can be installed from any enabled yum repo on the image.
@@ -18,6 +21,10 @@ dnf install -y tmux
 # dnf5 -y install package
 # Disable COPRs so they don't end up enabled on the final image:
 # dnf5 -y copr disable ublue-os/staging
+rpm-ostree install screen
+
+# this would install a package from rpmfusion
+# rpm-ostree install vlc
 
 #### Example for enabling a System Unit File
 
