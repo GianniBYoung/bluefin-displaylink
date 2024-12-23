@@ -52,7 +52,7 @@ COPY build.sh /tmp/build.sh
 
 RUN curl -o /etc/yum.repos.d/fedora-multimedia.repo https://negativo17.org/repos/fedora-multimedia.repo
 
-COPY --from=ghcr.io/ublue-os/akmods-extra:surface-40 /rpms/ /tmp/rpms
+COPY --from=ghcr.io/ublue-os/akmods-extra:main-40 /rpms/ /tmp/rpms
 
 RUN find /tmp/rpms
 
