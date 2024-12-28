@@ -52,6 +52,10 @@ COPY build.sh /tmp/build.sh
 
 RUN curl -o /etc/yum.repos.d/fedora-multimedia.repo https://negativo17.org/repos/fedora-multimedia.repo
 
+RUN --mount=type=cache,dst=/var/cache/rpm-ostree \
+    curl -Lo /etc/yum.repos.d/_copr_pgdev-ghostty.repo https://copr.fedorainfracloud.org/coprs/pgdev/ghostty/repo/fedora-"${FEDORA_MAJOR_VERSION}"/pgdev-ghostty-fedora-"${FEDORA_MAJOR_VERSION}".repo && \
+    dnf install -y ghostty
+
 COPY --from=ghcr.io/ublue-os/akmods-extra:main-41 /rpms/ /tmp/rpms
 
 RUN find /tmp/rpms
