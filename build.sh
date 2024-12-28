@@ -23,6 +23,7 @@ dnf install -y tmux
 # dnf5 -y copr disable ublue-os/staging
 rpm-ostree install screen
 rpm-ostree install kitty zsh
+rpm-ostree install kitty zsh ghostty
 
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
