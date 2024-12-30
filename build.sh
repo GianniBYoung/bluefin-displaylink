@@ -24,6 +24,7 @@ dnf install -y tmux
 rpm-ostree install screen
 rpm-ostree install kitty zsh
 rpm-ostree install kitty zsh ghostty
+rpm-ostree install kitty zsh ghostty piper
 
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
