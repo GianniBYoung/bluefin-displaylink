@@ -2,9 +2,6 @@
 
 set -ouex pipefail
 
-RELEASE="$(rpm -E %fedora)"
-
-
 ### Install packages
 
 # Packages can be installed from any enabled yum repo on the image.
@@ -13,7 +10,7 @@ RELEASE="$(rpm -E %fedora)"
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-dnf install -y tmux 
+dnf install -y kitty zsh
 
 # Use a COPR Example:
 #
@@ -21,11 +18,10 @@ dnf install -y tmux
 # dnf5 -y install package
 # Disable COPRs so they don't end up enabled on the final image:
 # dnf5 -y copr disable ublue-os/staging
-rpm-ostree install screen
-rpm-ostree install kitty zsh
-rpm-ostree install kitty zsh ghostty
-rpm-ostree install kitty zsh ghostty piper
-rpm-ostree install kitty zsh ghostty
+
+dnf5 -y copr enable pgdev/ghostty
+dnf5 -y install ghostty-git
+dnf5 -y copr disable pgdev/ghostty
 
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
