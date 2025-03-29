@@ -19,9 +19,9 @@ dnf install -y kitty zsh
 # Disable COPRs so they don't end up enabled on the final image:
 # dnf5 -y copr disable ublue-os/staging
 
-dnf5 -y copr enable pgdev/ghostty
-dnf5 -y install ghostty-git
-dnf5 -y copr disable pgdev/ghostty
+dnf5 -y copr enable markupstart/ghostty
+dnf5 -y install ghostty
+dnf5 -y copr disable markupstart/ghostty
 
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
