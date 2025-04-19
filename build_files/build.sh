@@ -10,7 +10,7 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-dnf install -y kitty zsh
+dnf5 install -y kitty zsh
 
 # Use a COPR Example:
 #
@@ -19,9 +19,9 @@ dnf install -y kitty zsh
 # Disable COPRs so they don't end up enabled on the final image:
 # dnf5 -y copr disable ublue-os/staging
 
-dnf5 -y copr enable pgdev/ghostty
-dnf5 -y install ghostty-git
-dnf5 -y copr disable pgdev/ghostty
+# dnf5 -y copr enable markupstart/ghostty
+# dnf5 -y install ghostty
+# dnf5 -y copr disable markupstart/ghostty
 
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
